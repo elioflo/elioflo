@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="content">
+        <slot />
+    </div>
+</div>
+
+<style>
+    .container {
+        min-height: 100vh;
+    }
+
+    .content {
+        width: calc(100% - 4rem);
+        max-width: 50rem;
+        margin: 0 auto;
+        padding: 1.5rem 0;
+    }
+</style>

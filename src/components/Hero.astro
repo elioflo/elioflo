@@ -1,0 +1,23 @@
+---
+import { data } from "@data";
+import Section from "@/components/Section.astro";
+
+const { name, surname, label, email, location, image } = data;
+const { city, country } = location;
+---
+
+<Section>
+    <h1>
+        {name}
+        {surname}
+    </h1>
+    <h2>{label}</h2>
+    <p>{city}, {country}</p>
+    <footer>
+        {email && <a href={`mailto:${email}`}>email</a>}
+    </footer>
+    <figure>
+        <img src={image} alt="Profile pic" />
+    </figure>
+</Section>
+<style></style>
