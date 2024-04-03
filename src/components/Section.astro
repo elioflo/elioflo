@@ -10,9 +10,17 @@ const { title } = Astro.props;
     h2 {
         margin-bottom: 0.5rem;
         font-weight: bold;
+        text-align: center;
     }
     section {
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
+    }
+
+    @media (width >= 40rem) {
+        h2 {
+            text-align: left;
+            margin-bottom: 1rem;
+        }
     }
 </style>

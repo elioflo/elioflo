@@ -1,11 +1,20 @@
 ---
-import Section from "@/components/Section.astro";
+import { repositories } from "@data";
 import Card from "@/components/Card.astro";
-import {repositories} from "@data";
-import type { Code } from "astro:components";
-const title = "Projects";
+import Section from "@/components/Section.astro";
+const title = "Proyectos";
 ---
 
 <Section {title}>
-    {repositories.map((repository => <Card {...repository} />))}
+    <div>
+        {repositories.map((repository) => <Card {...repository} />)}
+    </div>
 </Section>
+<style>
+    div {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        row-gap: 1.75rem;
+        place-items: center;
+    }
+</style>

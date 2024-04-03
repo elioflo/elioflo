@@ -10,6 +10,7 @@
             "country": "Argentina"
         }
     },
+    "resume_presentation": "Estudiante con conocimientos básicos de programación (C, Haskell, C + +,JAVA, OOP). Sin experiencia laboral en el área IT, busco desarrollarme profesionalmente en el área y adquirir experiencia. Tengo interés y predisposición para aprender nuevas tecnologías.",
     "profiles": [
         {
             "network": "GitHub",
@@ -22,11 +23,39 @@
     ],
     "repositories": [
         {
-            "title":"Blog preview card",
-            "text":"Built with Semantic HTML5 markup, CSS Grid and Mobile-first workflow",
-            "image":"./blog_card.webp",
-            "link":"https://elioflo.github.io/blog-preview-card-main/",
-            "github":"https://github.com/elioflo/blog-preview-card-main"
+            "title": "Blog preview card",
+            "text": "Built with Semantic HTML5 markup, CSS Grid and Mobile-first workflow",
+            "items": [
+                "HTML5",
+                "CSS",
+                "Mobile-first"
+            ],
+            "image": "./blog_card.webp",
+            "link": "https://elioflo.github.io/blog-preview-card-main/",
+            "github": "https://github.com/elioflo/blog-preview-card-main"
+        },
+        {
+            "title": "Recipe page",
+            "text": "This challenge will help you focus on writing semantic HTML.",
+            "items": [
+                "HTML5",
+                "CSS",
+                "Mobile-first"
+            ],
+            "image": "./recipe.webp",
+            "link": "https://elioflo.github.io/recipe-page-main/",
+            "github": "https://github.com/elioflo/recipe-page-main"
+        },
+        {
+            "title": "Marvel search",
+            "text": "This challenge will help you focus on writing semantic HTML.",
+            "items": [
+                "React",
+                "Styled-component"
+            ],
+            "image": "./marvel.webp",
+            "link": "https://marvel-searcher-two.vercel.app/",
+            "github": "https://github.com/elioflo/marvel-searcher"
         }
     ]
 }

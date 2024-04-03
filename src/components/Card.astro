@@ -5,28 +5,58 @@ interface Props {
 	image: string;
 	github: string;
 	link: string;
+	items: Array<string>;
 }
 import GitHub from "@/icons/GitHub.astro";
 import Web from "@/icons/web.astro";
 
-const { title, text, image, github, link } = Astro.props;
+const { title, text, image, github, link, items } = Astro.props;
 ---
 
 <div class="card">
-	<img src={image} alt={`${title.toLowerCase()} screenshot repository`} />
-	<h3>{title}</h3>
+	<a href={link} target="_blank">
+		<img src={image} alt={`${title.toLowerCase()} screenshot repository`} />
+	</a>
+	<h3>
+		<a href={link} target="_blank">{title}</a><a
+			class="github"
+			href={github}
+			target="_blank"><GitHub /></a>
+	</h3>
 	<p>{text}</p>
-	<div class="links">
+	<div class="items">
+		{items.map((item) => <span>{item}</span>)}
+	</div>
+	<!-- <div class="links">
 		<a href={github} target="_blank"><GitHub /></a>
 		<a href={link} target="_blank"><Web /></a>
-	</div>
+	</div> -->
 </div>
 <style>
+	.items {
+		display: flex;
+		justify-content: start;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+	}
+
+	span {
+		font-size: 0.7rem;
+		background-color: #f2f4f6;
+		padding: 0.125rem 0.25rem;
+		border-radius: 0.25rem;
+	}
+
 	.card {
 		background-color: #fffffe;
 		padding: 0.75rem;
 		border-radius: 0.5rem;
-		max-width: 20rem;
+		max-width: 15rem;
+	}
+
+	.card:hover {
+		background-color: #4fc4cf;
+		box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.1);
 	}
 
 	.links {
@@ -39,15 +69,22 @@ const { title, text, image, github, link } = Astro.props;
 
 	img {
 		border-radius: 0.25rem;
+		aspect-ratio: 3 / 2;
+		object-fit: cover;
 	}
 
 	h3 {
 		color: #00214d;
 		margin-top: 0.5rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	p {
 		color: #1b2d45;
 		margin-top: 0.5rem;
+		height: 4rem;
+		overflow: hidden;
 	}
 </style>
