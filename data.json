@@ -10,6 +10,21 @@
             "country": "Argentina"
         }
     },
+    "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "MySQL",
+        "Git",
+        "GitHub",
+        "Ruby",
+        "Java",
+        "Postman",
+        "SASS",
+        "SpringBoot",
+        "Angular"
+    ],
     "resume_presentation": "Estudiante con conocimientos básicos de programación (C, Haskell, C + +,JAVA, OOP). Sin experiencia laboral en el área IT, busco desarrollarme profesionalmente en el área y adquirir experiencia. Tengo interés y predisposición para aprender nuevas tecnologías.",
     "profiles": [
         {
