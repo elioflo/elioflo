@@ -9,5 +9,15 @@
             "city": "Buenos Aires",
             "country": "Argentina"
         }
-    }
+    },
+    "profiles": [
+        {
+            "network": "GitHub",
+            "url": "https://github.com/elioflo"
+        },
+        {
+            "network": "LinkedIn",
+            "url": "https://www.linkedin.com/in/elio-flores"
+        }
+    ]
 }

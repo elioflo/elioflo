@@ -1,23 +1,116 @@
 ---
-import { data } from "@data";
+import { data, profiles } from "@data";
+import GitHub from "@/icons/GitHub.astro";
+import LinkedIn from "@/icons/LinkedIn.astro";
+import Mail from "@/icons/Mail.astro";
 import Section from "@/components/Section.astro";
 
 const { name, surname, label, email, location, image } = data;
 const { city, country } = location;
+
+const SOCIAL_ICONS: Record<string, any> = {
+    GitHub,
+    LinkedIn,
+};
 ---
 
 <Section>
-    <h1>
-        {name}
-        {surname}
-    </h1>
-    <h2>{label}</h2>
-    <p>{city}, {country}</p>
-    <footer>
-        {email && <a href={`mailto:${email}`}>email</a>}
-    </footer>
-    <figure>
-        <img src={image} alt="Profile pic" />
-    </figure>
+    <div class="layout">
+        <figure>
+            <img src={image} alt="Profile pic" />
+        </figure>
+        <div>
+            <h1>
+                {name}
+                {surname}
+            </h1>
+            <h2>{label}</h2>
+            <p>{city}, {country}</p>
+            <footer>
+                {
+                    email && (
+                        <a href={`mailto:${email}`}>
+                            <Mail />
+                        </a>
+                    )
+                }
+                {
+                    profiles.map(({ network, url }) => {
+                        const Icon = SOCIAL_ICONS[network];
+                        return (
+                            <a
+                                href={url}
+                                title={`Visitar el perfil de ${name} en ${network}`}
+                                target="_blank"
+                            >
+                                <Icon />
+                            </a>
+                        );
+                    })
+                }
+            </footer>
+        </div>
+    </div>
 </Section>
-<style></style>
+<style>
+    figure {
+        img {
+            border-radius: 0.25rem;
+            border: 1px solid lightgray;
+            width: 8rem;
+            margin: 0 auto;
+        }
+    }
+
+    h1 {
+        margin-top: 1rem;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-weight: 400;
+    }
+
+    h1,
+    h2,
+    p {
+        text-align: center;
+    }
+
+    footer {
+        display: flex;
+        padding-top: 1rem;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    @media (width >= 40rem) {
+        .layout {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        h1,
+        h2,
+        p {
+            text-align: left;
+        }
+
+        footer {
+            justify-content: flex-start;
+        }
+
+        figure {
+            img {
+                width: 7rem;
+            }
+        }
+    }
+</style>
