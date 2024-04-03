@@ -21,7 +21,8 @@ const { title, text, image, github, link, items } = Astro.props;
 		<a href={link} target="_blank">{title}</a><a
 			class="github"
 			href={github}
-			target="_blank"><GitHub /></a>
+			target="_blank"><GitHub /></a
+		>
 	</h3>
 	<p>{text}</p>
 	<div class="items">
@@ -50,13 +51,13 @@ const { title, text, image, github, link, items } = Astro.props;
 	.card {
 		background-color: #fffffe;
 		padding: 0.75rem;
-		border-radius: 0.5rem;
+		border-radius: 0.3125rem;
 		max-width: 15rem;
+		box-shadow: 0 0 0.125rem 0 rgba(0, 0, 0, 0.1);
 	}
 
 	.card:hover {
-		background-color: #4fc4cf;
-		box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.1);
+		box-shadow: 0 0.3125rem 0.25rem 0 rgba(0, 0, 0, 0.1);
 	}
 
 	.links {
