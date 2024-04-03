@@ -19,5 +19,14 @@
             "network": "LinkedIn",
             "url": "https://www.linkedin.com/in/elio-flores"
         }
+    ],
+    "repositories": [
+        {
+            "title":"Blog preview card",
+            "text":"Built with Semantic HTML5 markup, CSS Grid and Mobile-first workflow",
+            "image":"./blog_card.webp",
+            "link":"https://elioflo.github.io/blog-preview-card-main/",
+            "github":"https://github.com/elioflo/blog-preview-card-main"
+        }
     ]
 }

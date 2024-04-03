@@ -1,13 +1,11 @@
 ---
 import Section from "@/components/Section.astro";
+import Card from "@/components/Card.astro";
+import {repositories} from "@data";
+import type { Code } from "astro:components";
 const title = "Projects";
 ---
 
 <Section {title}>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam id, ad
-        modi expedita perspiciatis vitae alias fuga, quas minima, necessitatibus
-        ullam. Similique, aperiam quis. Inventore neque dolorem voluptas
-        laboriosam repellat.
-    </p>
+    {repositories.map((repository => <Card {...repository} />))}
 </Section>
